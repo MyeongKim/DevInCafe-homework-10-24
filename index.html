@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  </head>
+
+  <body>
+    <h3>
+      if 조건문은 최소한으로 사용하세요.<br>
+      정규표현식을 사용하세요.
+    </h3>
+    <ol>
+      <li>url 형식의 string인지 검사하는 함수를 만드세요.</li>
+      <input type="text" id="problem1"/><button id="button1">확인</button>
+      <li>email 형식인지 검사하는 함수를 만드세요.</li>
+      <input type="text" id="problem2"/><button id="button2">확인</button>
+      <li>전화번호 입력값을 바르게 바꾸는 함수를 만드세요.<br>(000-0000-0000 이나 000.0000.0000는 0000000000 로 변환)</li>
+      <input type="text" id="problem3"/><button id="button3">확인</button>
+      <li>조건에 맞는 비밀번호 형식인지 검사하는 함수를 만드세요.<br>
+          (적어도 한개씩의 특수문자, 문자, 숫자를 포함하고, 같은 문자가 4개 이상 반복되지 않음)</li>
+      <input type="text" id="problem4"/><button id="button4">확인</button>
+      <li>조건에 맞는 아이디 형식인지 검사하는 함수를 만드세요.<br>
+          (공백, 한글, !@#$,.가 포함되지 않음)</li>
+      <input type="text" id="problem5"/><button id="button5">확인</button>          
+    </ol>
+    <script>
+      $(document).ready(function(){
+        $('#button1').click(function(){
+          var val = $('#problem1').val();
+          isUrlString(val);
+          $('#problem1').val('');
+        });
+        
+        $('#button2').click(function(){
+          var val = $('#problem2').val();
+          isEmailString(val);
+          $('#problem2').val('');
+        });
+        
+        $('#button3').click(function(){
+          var val = $('#problem3').val();
+          toPhoneNumber(val);
+          $('#problem3').val('');
+        });
+        
+        $('#button4').click(function(){
+          var val = $('#problem4').val();
+          isCorrectPW(val);
+          $('#problem4').val('');
+        });
+        
+        $('#button5').click(function(){
+          var val = $('#problem5').val();
+          isCorrectId(val);
+          $('#problem5').val('');
+        });
+      })
+    </script>
+  </body>
+
+</html>
